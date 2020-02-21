@@ -1,0 +1,39 @@
+@import "../scss/variables";
+
+div.person {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 1rem;
+  box-shadow: 2px 3px #999;
+  padding: 0.5rem;
+
+  .card-title {
+    font-size: 2rem;
+    display: inline-block;
+    background: #bebebe;
+    box-shadow: 2px 3px #999;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  table {
+    margin: 1rem auto;
+    tr {
+      margin-bottom: 0.5rem;
+      td {
+        padding: 0.25rem;
+        &:first-child {
+          text-align: right;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  li {
+    text-align: left;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-bottom: 1rem;
+  }
+}

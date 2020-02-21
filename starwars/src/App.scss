@@ -1,0 +1,25 @@
+@import "./scss/variables";
+
+main {
+  text-align: center;
+  margin: 3rem 0;
+}
+.Header {
+  color: #443e3e;
+  text-shadow: 1px 1px 5px #fff;
+}
+
+div.people {
+  padding: 1rem;
+  @media (min-width: $breakpoint-tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    grid-gap: 1rem;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    max-width: 1200px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
