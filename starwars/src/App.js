@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./App.css";
+import Person from "./components/Person";
+import "./App.scss";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -20,9 +21,12 @@ const App = () => {
   }, [currentPage]);
 
   return (
-    <div className="App">
+    <main>
       <h1 className="Header">React Wars</h1>
-    </div>
+      <div className="people">
+        {data.results && data.results.map(p => <Person key={p.url} data={p} />)}
+      </div>
+    </main>
   );
 };
 
