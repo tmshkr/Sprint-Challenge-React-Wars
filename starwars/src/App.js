@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Person from "./components/Person";
+import Paginator from "./components/Paginator";
+import { Spinner } from "reactstrap";
 import "./App.scss";
 
 const App = () => {
@@ -24,8 +26,24 @@ const App = () => {
     <main>
       <h1 className="Header">React Wars</h1>
       <div className="people">
-        {data.results && data.results.map(p => <Person key={p.url} data={p} />)}
+        {data.results ? (
+          data.results.map(p => <Person key={p.url} data={p} />)
+        ) : (
+          <>
+            <div></div>
+            <Spinner
+              type="grow"
+              style={{
+                color: "#fff",
+                width: "3rem",
+                height: "3rem",
+                margin: "3rem auto"
+              }}
+            />
+          </>
+        )}
       </div>
+      <Paginator count={data.count} page={[currentPage, setPage]} />
     </main>
   );
 };
